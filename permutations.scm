@@ -1,6 +1,6 @@
 (define (interleave x xs)
   `((,x . ,xs) . ,(if (null? xs) '()
-		    (map (lambda (lis) (consh(car xs) lis))
+		    (map (lambda (lis) (cons (car xs) lis))
 			 (interleave x (cdr xs))))))
 
 (define (permutations xs)
